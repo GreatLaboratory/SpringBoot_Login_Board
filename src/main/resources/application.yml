@@ -1,0 +1,30 @@
+spring:
+  profiles:
+    active: local
+  datasource:
+    url: jdbc:mysql://localhost:3306/demo?serverTimezone=Asia/Seoul&useSSL=false&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 1234
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    open-in-view: false
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+
+---
+
+spring:
+  profiles: server
+  datasource:
+    url: jdbc:mysql://greatlaboratory2.cydn8qcpi5ax.ap-northeast-2.rds.amazonaws.com:3306/connectdb?serverTimezone=Asia/Seoul&useSSL=false
+    username: user
+    password: cartopia95
+    jpa:
+      show-sql: true
+        hibernate:
+          ddl-auto: update
+        open-in-view: false
+        database: mysql
+        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
